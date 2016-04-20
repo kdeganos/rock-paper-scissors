@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RockPaperScissorsTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-04-20T16:50:16" hostname="epicodus-62.local" time="0.001">
+<testsuite name="RockPaperScissorsTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-04-20T17:56:50" hostname="epicodus-62.local" time="0.002">
   <properties/>
-  <testcase name="checkWinner_scissorsBeatsPaper_true" classname="RockPaperScissorsTest" time="0.001"/>
-  <testcase name="checkWinner_rockBeatsScissors_true" classname="RockPaperScissorsTest" time="0.0"/>
-  <testcase name="checkWinner_scissorsTie_true" classname="RockPaperScissorsTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="computerPlay_shouldBeAString_true" classname="RockPaperScissorsTest" time="0.002"/>
+  <testcase name="checkWinner_scissorsTie_2" classname="RockPaperScissorsTest" time="0.0"/>
+  <testcase name="checkWinner_scissorsBeatsPaper_0" classname="RockPaperScissorsTest" time="0.0"/>
+  <testcase name="announceResults_P2Win_PlayerTwoWins" classname="RockPaperScissorsTest" time="0.0"/>
+  <testcase name="checkWinner_rockBeatsScissors_0" classname="RockPaperScissorsTest" time="0.0"/>
+  <testcase name="announceResults_P1Win_PlayerOneWins" classname="RockPaperScissorsTest" time="0.0"/>
+  <system-out><![CDATA[paper
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

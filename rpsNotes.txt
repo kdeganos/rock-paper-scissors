@@ -1,13 +1,17 @@
 business end.
-comparison language:
-rock beats scissors
-scissors beats paper
-paper beats rock
-two of same is a tie and does not change current score.
-two entities choose plays.
-compare the two.
-determine winner.
+comparison language: //
+rock beats scissors //
+scissors beats paper //
+paper beats rock //
+two of same is a tie and does not change current score. //
+
+compare the two.//
+determine winner.//
 
 front end?
+one or two player?
 player clicks button (or something) to choose a play.
+compare the two
+display winner
+
 for computer play, use random to choose rock, paper, or scissors.

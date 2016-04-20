@@ -1,6 +1,8 @@
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Arrays;
+import java.util.Random;
+import java.io.Console;
 
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
@@ -38,5 +40,20 @@ public class RockPaperScissors {
         }
     }
     return result;
+  }
+
+  public static String announceResults(Integer result) {
+    String[] gameResults = {"Player One Wins!", "Player Two Wins!", "It's a Tie!"};
+    String finalResult = gameResults[result];
+
+    return finalResult;
+  }
+
+  public static String computerPlay() {
+    Console console = System.console();
+    Random computerChoice = new Random();
+    String[] possibleChoices = {"rock", "paper", "scissors"};
+    System.out.println(possibleChoices[computerChoice.nextInt(3)]);
+    return possibleChoices[computerChoice.nextInt(3)];
   }
 }
