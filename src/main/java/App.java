@@ -9,26 +9,28 @@ public class App {
   public static void main(String[] args) {
     String layout = "templates/layout.vtl";
 
+    // Boolean twoPlayerGameBool;
+
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/chooseGameType.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/pvp", (request, response) -> {
+    // get("/pvp", (request, response) -> {
+    //   Map<String, Object> model = new HashMap<String, Object>();
+    //   model.put("template", "templates/pvp.vtl");
+    //
+    //   Boolean twoPlayerGameBool = true;
+    //
+    //   return new ModelAndView(model, layout);
+    // }, new VelocityTemplateEngine());
+
+    get("/game", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/pvp.vtl");
+      model.put("template", "templates/game.vtl");
 
-      RockPaperScissors twoPlayerRockPaperScissors = new RockPaperScissors();
-
-      return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine());
-
-    get("/pve", (request, response) -> {
-      Map<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/pve.vtl");
-
-      RockPaperScissors onePlayerRockPaperScissors = new RockPaperScissors();
+      Boolean twoPlayerGameBool = false;
 
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -36,6 +38,22 @@ public class App {
     get("/winner", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/winner.vtl");
+      Boolean twoPlayerGameBool = true;
+
+      RockPaperScissors playRPS = new RockPaperScissors();
+      String playerOneChoice = "rock";
+      String playerTwoChoice = "scissors";
+      if (twoPlayerGameBool == true) {
+        //run two player game
+        // playerTwoChoice = request.queryParams(userinput);
+      } else {
+        //run one player game.
+        playerTwoChoice = playRPS.computerPlay();
+      }
+      Integer result = playRPS.checkWinner(playerOneChoice, playerTwoChoice);
+      String announcement = playRPS.announceResults(result);
+
+      model.put("announcement", announcement);
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
     // RockPaperScissors playRockPaperScissors = new RockPaperScissors();
